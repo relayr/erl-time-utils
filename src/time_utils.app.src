@@ -2,5 +2,6 @@
     {description, "Miscellaneous time conversion utilities"},
     {vsn, "1.0.0"},
     {licenses,["MIT"]},
-    {links,[{"GitHub", "https://github.com/relayr/erl-time-utils"}]}
+    {links,[{"GitHub", "https://github.com/relayr/erl-time-utils"}]},
+    {applications,[kernel,stdlib]}
 ]}.
