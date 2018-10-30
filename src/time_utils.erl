@@ -46,6 +46,8 @@
 %% Types
 %%------------------------------------------------------------------------------
 
+-export_type([ts/0]).
+
 %% =============================================================================
 %% Exported functions
 %% =============================================================================
@@ -150,8 +152,7 @@ datetime_to_epoch_seconds(DateTime) ->
 epoch_seconds_to_datetime(Seconds) ->
     calendar:gregorian_seconds_to_datetime(Seconds + ?GREGORIAN_SECONDS_1970).
 
--spec convert_timestamp(IsoDateTime :: iodata() | integer() | undefined) ->
-	TsInMillis :: integer() | undefined | {error, Reason :: binary()}.
+-spec convert_timestamp(IsoDateTime :: iodata() | integer() | undefined) -> TsInMillis :: ts() | undefined.
 convert_timestamp(undefined) ->
 	undefined;
 convert_timestamp(Timestamp) when is_integer(Timestamp), Timestamp < 0 ->
@@ -166,7 +167,7 @@ convert_timestamp(Timestamp) when is_integer(Timestamp), Timestamp >= 0->
 convert_timestamp(IsoDateTime) ->
 	iso8601_to_millis(IsoDateTime).
 
--spec iso8601_to_millis(IsoDateTime :: iodata()) -> TsInMillis :: ts() | {error, Reason :: binary()}.
+-spec iso8601_to_millis(IsoDateTime :: iodata()) -> TsInMillis :: ts().
 iso8601_to_millis(IsoDateTime) ->
 	try
 		{Date, {H, M, FloatSeconds}} = iso8601:parse_exact(IsoDateTime),
