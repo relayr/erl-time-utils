@@ -3,4 +3,4 @@
               {vsn,"1.0.7"},
               {licenses,["MIT"]},
               {links,[{"GitHub","https://github.com/relayr/erl-time-utils"}]},
-              {applications,[kernel,stdlib,iso8601]}]}.
+              {applications,[kernel,stdlib,inets,iso8601]}]}.
