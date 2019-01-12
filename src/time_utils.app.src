@@ -1,6 +1,6 @@
 {application,time_utils,
              [{description,"Miscellaneous time conversion utilities"},
-              {vsn,"1.0.8"},
+              {vsn,"1.0.9"},
               {licenses,["MIT"]},
               {links,[{"GitHub","https://github.com/relayr/erl-time-utils"}]},
               {applications,[kernel,stdlib,inets,iso8601]}]}.
