@@ -1,0 +1,31 @@
+name: Erlang CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: erlang:22.0
+
+    steps:
+    - uses: actions/checkout@v1.0.0
+      with:
+        submodules: true
+    - name: Configure
+      run: cp .github/scripts/rebar.config.script .
+    - name: Build
+      run: .github/scripts/build.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish
+      if: github.event_name == 'release' && github.event.action == 'published'
+      run: .github/scripts/publish.sh
+      env:
+        HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
