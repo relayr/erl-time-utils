@@ -1,6 +1,6 @@
 # time_utils
 
-[![Build Status](https://travis-ci.org/relayr/erl-time-utils.svg?branch=master)](https://travis-ci.org/relayr/erl-time-utils) [![Coverage Status](https://coveralls.io/repos/github/relayr/erl-time-utils/badge.svg?branch=master)](https://coveralls.io/github/relayr/erl-time-utils?branch=master)
+[![Build Status](https://img.shields.io/github/workflow/status/relayr/erl-time-utils/Erlang%20CI)](https://github.com/relayr/erl-time-utils/actions?query=workflow%3A%22Erlang+CI%22) [![Hex.pm](https://img.shields.io/hexpm/v/time_utils.svg?style=flat)](https://hex.pm/packages/time_utils) [![Coverage Status](https://coveralls.io/repos/github/relayr/erl-time-utils/badge.svg?branch=master)](https://coveralls.io/github/relayr/erl-time-utils?branch=master)
 
 Erlang time conversion utilities.
 
